@@ -1,0 +1,521 @@
+@charset "utf-8";
+
+
+/* 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.banner {
+    transition: all 0.3s ease;
+    opacity: 1;
+    height: 34px;
+    overflow: hidden;
+    background-color: #FAFAF8;
+}
+
+.banner.hide {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 70px;
+
+    position: fixed;
+    z-index: 9999;
+    background-color: #fff;
+}
+
+header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .header-inner h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 320px;
+
+}
+
+header .header-inner h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+header .header-inner h1 a img {
+    width: 100%;
+}
+
+header .header-inner nav {}
+
+header .header-inner nav .main-nav {
+    display: flex;
+}
+
+header .header-inner nav .main-nav li {}
+
+header .header-inner nav .main-nav li:not(:last-child) {
+    margin-right: 30px;
+}
+
+header .header-inner nav .main-nav li a {
+    line-height: 70px;
+}
+
+header .header-inner .header-right {
+    display: flex;
+}
+
+header .header-inner .header-right ul li a {
+    line-height: 70px;
+}
+
+header .header-inner .header-right li p {
+    line-height: 70px;
+}
+
+header .header-inner .header-right .user-menu {
+    display: flex;
+}
+
+header .header-inner .header-right .user-menu li.bar {
+    margin: 0 2px;
+}
+
+header .header-inner .header-right .icon-menu {
+    display: flex;
+    margin-left: 5px;
+}
+
+header .header-inner .header-right .icon-menu li {
+    margin-left: 15px;
+}
+
+header .header-inner .header-right .icon-menu li a {}
+
+header .header-inner .header-right .icon-menu li a img {
+    width: 20px;
+}
+
+
+/* section ************************************************************************************************************************************** */
+
+section.main-banner {
+    margin-bottom: 0.5%;
+}
+
+section .slider {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    /* btn prev next 기준 */
+
+    overflow: hidden;
+}
+
+section .slider .viewer {
+    width: 400%;
+}
+
+section .slider .viewer {}
+
+section .slider .viewer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section .slider .viewer li {
+
+    float: left;
+    width: 25%;
+    height: 100vh;
+    /* img 높이가 없어서 임의로 우선 줌 */
+
+    position: relative;
+
+}
+
+section .slider .viewer li {}
+
+section .slider .viewer .sid1 {
+    background: url(img/banner1.jpg) no-repeat center/cover;
+}
+
+section .slider .viewer .sid2 {
+    background: url(img/banner2.jpg) no-repeat center/cover;
+}
+
+section .slider .viewer .sid3 {
+    background: url(img/banner3.jpg) no-repeat center/cover;
+}
+
+section .slider .viewer .sid4 {
+    background: url(img/banner4.jpg) no-repeat center/cover;
+}
+
+section .slider .viewer .slide {
+    background-size: 100% 100%;
+}
+
+
+
+section .slider .viewer li .des {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section .slider .viewer li .des h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 100px;
+}
+
+section .slider .viewer li .des .title-btn {
+    width: 170px;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #333;
+    border-radius: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section .slider .viewer li .des .title-btn:hover {
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 1);
+    transition: all 0.3s;
+}
+
+section .slider .viewer li .des .title-btn a {
+    width: 100%;
+    display: block;
+
+    color: #333;
+}
+
+section .slider .viewer li .des .title-btn a:hover {}
+
+
+section .slider .pager {
+    position: absolute;
+    right: 5%;
+    bottom: 10px;
+}
+
+section .slider .pager li {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 100%;
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* 기본 색: 연한 회색 */
+}
+
+
+section .slider .pager li {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+section .slider .pager li.active {
+    background-color: #000;
+}
+
+section .slider .pager li~li {
+    margin-left: 20px;
+}
+
+section .slider .pager li span {
+    display: none;
+}
+
+
+section .slider>.btn {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+section .slider>.prev {
+    left: 50px;
+}
+
+section .slider>.next {
+    right: 50px;
+}
+
+
+/* section2 */
+
+section .product-inner {
+    display: flex;
+    width: 100%;
+}
+
+section .product-inner .card {
+    width: 33%;
+
+    position: relative;
+    /* content 기준 */
+    overflow: hidden;
+
+
+}
+
+section .product-inner .card:hover img {
+    transform: scale(1.2);
+
+}
+
+section .product-inner .card~.card {
+    margin-left: 0.5%;
+}
+
+.card a {
+    text-align: center;
+}
+
+.card a img {
+    width: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+
+.card a .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.card a .content .txt {
+    margin-bottom: 50px;
+}
+
+.card a .content .txt h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card a .content .txt p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card a .content .btn {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.card a .content .btn p {
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    padding: 5px 15px;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+}
+
+.card a .content .btn p:hover {
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 1);
+    transition: all 0.3s;
+}
+
+
+section>.instagram {}
+
+section>.instagram .insta-title {
+    text-align: center;
+    padding: 0 50px 100px;
+}
+
+section>.instagram .insta-title p {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+section>.instagram .insta-title h2 {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 34px;
+}
+
+
+section>.instagram .insta-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+section>.instagram .insta-content li {
+    width: calc(20% - 8px);
+    box-sizing: border-box;
+
+
+}
+
+section>.instagram .insta-content li:hover img {
+    transform: scale(1.2);
+}
+
+
+section>.instagram .insta-content li a {
+    aspect-ratio: 1 / 1;
+    /* 정사각형 박스 만들기 */
+    display: block;
+    overflow: hidden;
+}
+
+section>.instagram .insta-content li a img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    transition: all 2s;
+
+
+}
+
+section .videobox {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section .videobox iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+
+/* 반응형 */
+
+@media (max-width: 1200px) {
+    header .header-inner h1 {
+        width: 260px;
+    }
+
+    header .header-inner nav .main-nav li:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header .header-inner h1 {
+        width: 220px;
+    }
+
+    header .header-inner nav .main-nav li a {
+        font-size: 14px;
+    }
+
+    header .header-inner nav .main-nav li:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    header .header-inner .header-right {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    header .header-inner h1 {
+        width: 190px;
+    }
+
+    header .header-inner nav .main-nav li a {
+        font-size: 13px;
+    }
+
+    header .header-inner nav .main-nav li:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    header .header-inner .icon-menu li {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    header .header-inner h1 {
+        position: static;
+        transform: none;
+        width: 180px;
+    }
+
+    header .header-inner nav,
+    header .header-inner .header-right {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav li a {
+        font-size: 14px;
+        line-height: 36px;
+    }
+}
